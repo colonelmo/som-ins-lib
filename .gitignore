@@ -1,0 +1,5 @@
+eclipse bin directory
+bin/
+
+java byte-code files
+*.class
