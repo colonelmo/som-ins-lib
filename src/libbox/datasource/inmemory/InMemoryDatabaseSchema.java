@@ -1,22 +1,23 @@
 package libbox.datasource.inmemory;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class InMemoryDatabaseSchema {
-	private HashMap<String, Type> fields;
+	private ArrayList<String> fields;
 	private String primaryKey;
 	
 	public InMemoryDatabaseSchema(){
-		this(new HashMap<>());
+		this(new ArrayList<>());
 	}
 	
-	public InMemoryDatabaseSchema(HashMap<String, Type> schema){
+	public InMemoryDatabaseSchema(ArrayList<String> schema){
 		this.fields = schema ;
 	}
 	
-	public void add(String name, Type type){
-		this.fields.put(name, type);
+	public void add(String name){
+		this.fields.add(name);
 	}
 	
 	public String getPrimaryKey(){
@@ -27,8 +28,8 @@ public class InMemoryDatabaseSchema {
 		this.primaryKey = primaryKey;
 	}
 	
-	public HashMap<String, Type> getFields(){
-		return this.fields ;
+	public ArrayList<String> getFields(){
+		return this.fields;
 	}
 	
 }
